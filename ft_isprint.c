@@ -17,17 +17,3 @@ int	ft_isprint(int c)
 	else
 		return (0);
 }
-/*
-#include <stdio.h>
-
-int main()
-{
-    printf("%d\n",ft_isprint('K'));
-    printf("%d\n",ft_isprint('\t'));
-    printf("%d\n",ft_isprint(' '));
-    printf("%d\n",ft_isprint(0));
-    printf("%d\n",ft_isprint(150));
-    printf("%d\n",ft_isprint(-8));
-    printf("%d\n",ft_isprint(50));
-    return (0);
-}*/

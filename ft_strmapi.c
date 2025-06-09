@@ -32,19 +32,3 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	result[i] = '\0';
 	return (result);
 }
-/*
-#include <stdio.h>
-
-char func(unsigned int i, char c)
-{
-	if (c >= 'a' && c <= 'z')
-		c -= 32;
-	return (c);
-}
-int main()
-{
-	const char *s = "zozgetopHJKtas";
-	char *result = ft_strmapi(s,func);
-	printf("%s\n",result);
-	return (0);
-}*/

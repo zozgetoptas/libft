@@ -17,16 +17,3 @@ int	ft_isdigit(int c)
 	else
 		return (0);
 }
-#include <ctype.h>
-#include <stdio.h>
-
-int main()
-{
-    printf("%d\n",isdigit('c'));
-    printf("%d\n",isdigit('8'));
-    printf("%d\n",isdigit(7));
-    printf("%d\n",isdigit(97));
-    printf("%d\n",isdigit('*'));
-    printf("%d\n",isdigit(128)); 
-    printf("%d\n",isdigit(55));
-}

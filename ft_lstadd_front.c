@@ -7,5 +7,4 @@
     new->next = *lst;
     *lst = new;
     }
-
  }

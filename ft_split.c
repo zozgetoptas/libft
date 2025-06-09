@@ -12,22 +12,22 @@
 
 #include "libft.h"
 
-static size_t	count_words(const char	*s, char c)
+static size_t	count_parts(const char	*s, char c)
 {
 	size_t	count;
-	int		in_word;
+	int		in_part;
 
 	count = 0;
-	in_word = 0;
+	in_part = 0;
 	while (*s)
 	{
-		if (*s != c && in_word == 0)
+		if (*s != c && in_part == 0)
 		{
-			in_word = 1;
+			in_part = 1;
 			count++;
 		}
 		else if (*s == c)
-			in_word = 0;
+			in_part = 0;
 		s++;
 	}
 	return (count);
@@ -46,7 +46,7 @@ static void	free_split(char **s, size_t len)
 	free(s);
 }
 
-static int	split_words(char **split, const char *s, char c)
+static int	split_parts(char **split, const char *s, char c)
 {
 	size_t	i;
 	size_t	j;
@@ -63,85 +63,30 @@ static int	split_words(char **split, const char *s, char c)
 		{
 			split[j] = ft_substr(s, start, i - start);
 			if (!split[j])
-				return (j);  // başarısızlıkta kaç tane alındı döner
+				return (j);
 			j++;
 			start = -1;
 		}
 		i++;
 	}
 	split[j] = NULL;
-	return (-1); // başarı durumu
+	return (-1);
 }
 char	**ft_split(char const *s, char c)
 {
-	char	**split;
-	int		ret;
+	char	**splitted;
+	int		ret_val;
 
 	if (!s)
 		return (NULL);
-	split = malloc((count_words(s, c) + 1) * sizeof(char *));
-	if (!split)
+	splitted = malloc((count_parts(s, c) + 1) * sizeof(char *));
+	if (!splitted)
 		return (NULL);
-	ret = split_words(split, s, c);
-	if (ret >= 0)  // hata varsa
+	ret_val = split_parts(splitted, s, c);
+	if (ret_val >= 0)
 	{
-		free_split(split, ret);
+		free_split(splitted, ret_val);
 		return (NULL);
 	}
-	return (split);
+	return (splitted);
 }
-/*
-#include <stdio.h>
-
-int	main(void)
-{
-	char	**res;
-	int		i;
-
-	res = ft_split("hello world this is a test", ' ');
-	i = 0;
-	while (res && res[i])
-	{
-		printf("[%s]\n", res[i]);
-		free(res[i]);
-		i++;
-	}
-	free(res);
-
-	res = ft_split("", ' ');
-	i = 0;
-	while (res && res[i])
-	{
-		printf("[%s]\n", res[i]);
-		free(res[i]);
-		i++;
-	}
-	free(res);
-
-	res = ft_split("   ", ' ');
-	i = 0;
-	while (res && res[i])
-	{
-		printf("[%s]\n", res[i]);
-		free(res[i]);
-		i++;
-	}
-	free(res);
-
-	res = ft_split(",,a,b,,c,", ',');
-	i = 0;
-	while (res && res[i])
-	{
-		printf("[%s]\n", res[i]);
-		free(res[i]);
-		i++;
-	}
-	free(res);
-
-	res = ft_split(NULL, ',');
-	if (!res)
-		printf("NULL\n");
-
-	return (0);
-}
-*/

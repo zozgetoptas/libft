@@ -24,31 +24,3 @@ void	*ft_memset(void	*dest, int ch, size_t	count)
 	}
 	return (dest);
 }
-
-
-#include <stdio.h>
-/*
-int main()
-{
-	char dest[] = "zozgetoptas";
-	char *result = ft_memset(dest,'a',3);
-	printf("%s",result);
-	return (0);
-}*/
-/*
-int main()
-{
-	int x[1];
-	void *addr = &x;
-
-	ft_memset(x, 28, 2);
-	ft_memset(x, 32, 1);
-	// ft_memset(addr, 32 , 1);
-	// ft_memset(addr +1, 28, 1);
-	// ft_memset(addr + 2, 0, 1);
-	// ft_memset(addr + 3, 0, 1);
-	
-	
-	printf("%d" , *x);
-}
-*/

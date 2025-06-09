@@ -14,7 +14,7 @@
 
 static int	ft_len(long n, int sign)
 {
-	long	count;
+	int	count;
 
 	count = 0;
 	if (n == 0)
@@ -63,51 +63,3 @@ char	*ft_itoa(int n)
 		str[0] = '-';
 	return (str);
 }
-/*
-#include <stdio.h>
-
-int main()
-{
-	int arr[] = {7,34,-78,25436543,2147483647,-21474836480};
-	int i = 0;
-	while (i < 6)
-	{
-		char *s = ft_itoa(arr[i]);
-		printf("%d. -> %s\n",i+1,s);
-		free(s);
-		i++;
-	}
-	return (0);
-}*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-#include <stdio.h>
-
-int main()
-{
-	int n1 = 38764;
-
-	char *s1 = ft_itoa(n1);
-	printf("%s",s1);
-	free(s1);
-}*/

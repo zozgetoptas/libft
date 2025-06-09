@@ -10,11 +10,11 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	s = (const unsigned char *)src;
 	if (d > s)
 	{
-		i = len;  // i'yi len ile başlatıyoruz
+		i = len;
 		while (i > 0)
 		{
-			i--;          // önce 1 azalt
-			d[i] = s[i];  // sonra o byte'ı kopyala
+			i--;
+			d[i] = s[i];
 		}
 	}
 	else
@@ -28,18 +28,15 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	}
 	return (dst);
 }
-/*
+
+#include <string.h>
 #include <stdio.h>
 int main()
 {
-    char str1[] = "HelloWorld";
-    
-    printf("Orijinal str1: %s\n", str1);
-    
-    // Bellekte örtüşme var: str1'in başına 5 karakter kopyala (Hello -> World)
-    // dst = str1, src = str1 + 5, len = 5
-    ft_memmove(str1, str1 + 5, 5);
-    
-    printf("ft_memmove sonra: %s\n", str1);
-	return (0);
-}*/
+    char dest[] ="zozgetoptas";
+    char *resultft = ft_memmove(dest+2,dest ,5);
+    char *resultorig = memmove(dest+2,dest,5);
+    printf("%s\n",resultft);
+    printf("%s",resultorig);
+    return (0);
+}

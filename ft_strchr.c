@@ -24,18 +24,3 @@ char *ft_strchr (const char *str, int ch)
     }
     return (NULL);
 }
-/*
-#include <stdio.h>
-
-int main()
-{
-    char str[] = "zeynepozge";
-    printf("%s\n",ft_strchr(str,'e'));
-    char *result = ft_strchr(str,'a');
-    if (!result)
-    {
-        printf("null");
-    }
-
-    return (0);
-}*/

@@ -21,16 +21,3 @@ int ft_atoi(const char *str)
     }
     return (sign * res);
 }
-/*
-#include <stdio.h>
-
-int main()
-{
-    char *str = "-0123";
-    printf("%d\n",ft_atoi(str));
-    printf("Test 4: '%s' -> %d\n", "   +-42", ft_atoi("   +-42")); // beklenmeyen davranış
-    printf("Test 5: '%s' -> %d\n", "4193 with words", ft_atoi("4193 with words"));
-    printf("Test 6: '%s' -> %d\n", "words and 987", ft_atoi("words and 987")); // 0 dönmeli
-    printf("Test 7: '%s' -> %d\n", "-91283472332", ft_atoi("-91283472332"));
-    return (0);
-}*/

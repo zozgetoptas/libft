@@ -23,22 +23,6 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	ft_bzero(ptr, nmemb * size);
 	return (ptr);
 }
-/*
-#include <stdio.h>
-
-int main()
-{
-	int *ptr = ft_calloc(4,sizeof(char));
-	int i = 0;
-	while (i < 4)
-	{
-		printf("%d ",ptr[i]);
-		i++;
-	}
-	free(ptr);
-	return (0);
-}
-*/
 
 
 

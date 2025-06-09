@@ -25,24 +25,4 @@ void	ft_putstr_fd(char *s, int fd)
 			index++;
 		}
 	}
-}/*
-#include <fcntl.h>
-#include <unistd.h>
-
-int main()
-{
-	int fd = open ("dosya1.txt",O_WRONLY | O_CREAT | O_TRUNC, 0644);
-	char s[] = "zozge";
-	ft_putstr_fd(s,fd);
-	close(fd);
-	return (0);
-}*/
-/*
-int main()
-{
-	char s[] = "hata!";
-	char s1[] = "normal";
-	ft_putstr_fd(s,2);
-	ft_putstr_fd(s1,1);
-	return (0);
-}*/
+}

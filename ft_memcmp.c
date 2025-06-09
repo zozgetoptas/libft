@@ -30,25 +30,3 @@ int ft_memcmp(const void *s1, const void *s2, size_t n)
 
     return (0);
 }
-/*
-#include <stdio.h>
-int main()
-{
-	int str[] = {12,56,3,9};
-	int str2[] = {12,56,3,7};
-	int result = ft_memcmp (str,str2,sizeof(int) * 3);
-	printf("%d",result);
-}
-*/
-
-/*
-#include <stdio.h>
-
-int main()
-{
-    char str1[] = "ozge";
-    char str2[] = "ozget";
-    int result = ft_memcmp(str1,str2,5);
-    printf("%d",result);
-    return (0);
-}*/

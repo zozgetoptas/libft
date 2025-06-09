@@ -12,6 +12,6 @@
         {
             last = ft_lstlast(*lst);
             last->next = new;
-        }    
+        }
     }
  }

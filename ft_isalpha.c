@@ -17,14 +17,3 @@ int	ft_isalpha(int c)
 	else
 		return (0);
 }
-#include <ctype.h>
-#include <stdio.h>
-
-int main()
-{
-    printf("%d\n",isalpha('c'));
-    printf("%d\n",isalpha('8'));
-    printf("%d\n",ft_isalpha(-4));
-    printf("%d\n",ft_isalpha(97));
-    printf("%d\n",ft_isalpha('*'));
-}
