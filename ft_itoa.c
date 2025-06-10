@@ -28,6 +28,7 @@ static int	ft_len(long n, int sign)
 		count++;
 	return (count);
 }
+
 static long	ft_sign(int n, int *sign)
 {
 	long	n2;
@@ -40,11 +41,12 @@ static long	ft_sign(int n, int *sign)
 	n2 *= (*sign);
 	return (n2);
 }
+
 char	*ft_itoa(int n)
 {
 	char	*str;
-	int	len;
-	int	sign;
+	int		len;
+	int		sign;
 	long	n2;
 
 	n2 = ft_sign(n, &sign);

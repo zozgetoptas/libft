@@ -28,7 +28,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	}
 	return (dst);
 }
-
+/*
 #include <string.h>
 #include <stdio.h>
 int main()
@@ -39,4 +39,4 @@ int main()
     printf("%s\n",resultft);
     printf("%s",resultorig);
     return (0);
-}
+}*/
