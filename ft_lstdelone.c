@@ -25,6 +25,7 @@ void ft_lstdelone(t_list *lst, void (*del)(void*))
         free (lst);
     }
 }
+/*
 #include <stdio.h>
 int main()
 {
@@ -42,4 +43,4 @@ int main()
         temp = temp.next;
     }
     
-}
+}*/
