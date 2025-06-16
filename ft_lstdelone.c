@@ -12,10 +12,6 @@
 
 #include "libft.h"
 
-void del(void *content)
-{
-    free(content);
-}
 
 void ft_lstdelone(t_list *lst, void (*del)(void*))
 {
@@ -25,22 +21,3 @@ void ft_lstdelone(t_list *lst, void (*del)(void*))
         free (lst);
     }
 }
-/*
-#include <stdio.h>
-int main()
-{
-    t_list  **lst;
-    t_list *node1 = ft_lstnew("zozge");
-    t_list *node2 = ft_lstnew("toptas");
-    t_list *node3 = ft_lstnew("yesil");
-    ft_lstadd_back(lst,node1);
-    ft_lstadd_back(lst,node2);
-    ft_lstadd_back(lst,node3);
-    t_list  *temp = lst;
-    while(lst)
-    {
-        printf("%s ",temp.content);
-        temp = temp.next;
-    }
-    
-}*/

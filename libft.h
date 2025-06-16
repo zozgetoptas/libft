@@ -17,10 +17,9 @@ Bu satırlar, dosyanın birden fazla kez yüklenmesini engeller. Eğer başka bi
 Yani:
 “Bu dosya zaten eklendiyse bir daha ekleme.”
 */
-# include <stdlib.h>
 # include <stddef.h>
-# include <unistd.h>
-
+#include <stdlib.h>
+#include <unistd.h>
 typedef struct s_list
 {
     void			*content;
