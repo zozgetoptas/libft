@@ -16,6 +16,19 @@
 #include <ctype.h>
 #include <string.h>
 
+#include <fcntl.h>
+
+int main()
+{
+	int fd = open("test.txt", O_WRONLY | O_CREAT, 0777);
+	ft_putchar_fd('a',fd);
+}
+
+
+
+
+
+/*
 void    f(void *content)
 {
 	printf("%s\n",(char *)content);
@@ -31,7 +44,7 @@ int main()
 	return (0);
 
 }
-
+*/
 /*
 int main()
 {
