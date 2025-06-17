@@ -15,19 +15,7 @@
 #include <stdlib.h>
 #include <ctype.h>
 #include <string.h>
-
 #include <fcntl.h>
-
-int main()
-{
-	int fd = open("test.txt", O_WRONLY | O_CREAT, 0777);
-	ft_putchar_fd('a',fd);
-}
-
-
-
-
-
 /*
 void    f(void *content)
 {
@@ -82,7 +70,10 @@ int main()
 }
 */
 
-/*
+void del( void *content)
+{
+	free (content);
+}
 int main()
 {
 	t_list *head = NULL;
@@ -90,8 +81,12 @@ int main()
 	t_list *node2;
 	t_list *node3;
 
-	node1 = ft_lstnew("z");
-	node2 = ft_lstnew("ozge");
+	char str1[] = "z";
+	char str2[] = "ozge";
+	char str3[] = "toptas";
+
+	node1 = ft_lstnew(str1);
+	node2 = ft_lstnew(str2);
 	ft_lstadd_front(&head,node2);
 	ft_lstadd_front(&head,node1);
 
@@ -105,7 +100,7 @@ int main()
 	printf("\nson dugum: %s", (char *)ft_lstlast(head)->content);
 	printf("\nkac dugum var? : %d\n", ft_lstsize(head));
 
-	node3 = ft_lstnew("toptas");
+	node3 = ft_lstnew(str3);
 	ft_lstadd_back(&head,node3);
 
 	temp = head;
@@ -118,10 +113,15 @@ int main()
 	printf("\nson dugum: %s", (char *)ft_lstlast(head)->content);
 	printf("\nkac dugum var? : %d", ft_lstsize(head));
 
-	printf("\n%s", (char *)ft_lstlast(head)->content);
-	ft_lstadd_back(&head,node1);
-	printf("%s", (char *)head->next->next->next->next->next->content);
+	ft_lstdelone(node2, del);
+
+	temp = head;
+
+	while(temp)
+	{
+		printf("%s  ",(char *)temp->content);
+		temp = temp->next;
+	}
 
 	return (0);
 }
-*/
