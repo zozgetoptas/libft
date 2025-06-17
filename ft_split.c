@@ -36,7 +36,7 @@ static size_t	count_parts(const char	*s, char c)
 
 static void	free_split(char **s, size_t len)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (i < len)
@@ -73,6 +73,7 @@ static int	split_parts(char **split, const char *s, char c)
 	split[j] = NULL;
 	return (-1);
 }
+
 char	**ft_split(char const *s, char c)
 {
 	char	**splitted;
