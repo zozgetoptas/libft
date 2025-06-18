@@ -54,7 +54,7 @@ char	*ft_itoa(int n)
 	len = ft_len(n2, sign);
 	str = malloc (sizeof(char) * (len + 1));
 	if (!str)
-		return (0);
+		return (NULL);
 	str[len] = '\0';
 	while (len > 0)
 	{

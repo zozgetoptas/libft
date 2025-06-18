@@ -1,127 +1,105 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ztoptas <ztoptas@student.42kocaeli.com.    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/10 18:01:39 by ztoptas           #+#    #+#             */
-/*   Updated: 2025/06/10 18:01:39 by ztoptas          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#include "libft.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <ctype.h>
-#include <string.h>
+#include "libft.h"
 #include <fcntl.h>
-/*
-void    f(void *content)
+
+
+void *uppercase(void *content)
 {
-	printf("%s\n",(char *)content);
+    char *str = (char *)content;
+    int i = 0;
+    while(str[i])
+    {
+        if(str[i] >= 'a' && str[i] <= 'z')
+            str[i] -= 32;
+        i++;
+    }
+    return ((void *)str);
 }
 int main()
 {
-	t_list *head = NULL;
-	t_list *node1 = ft_lstnew("ozge");
-	t_list *node2 = ft_lstnew("toptas");
-	ft_lstadd_back(&head,node1);
-	ft_lstadd_back(&head,node2);
-	ft_lstiter(node1,f);
-	return (0);
+    t_list *first_node;
+    t_list *second_node;
+    t_list *head; // yoksa dugumun basi neresi anlamiyorum kafami karisitiriyo
 
-}
-*/
-/*
-int main()
-{
-	t_list *head = NULL;
-	t_list *node1;
-	t_list *node2;
-	node1 = ft_lstnew(strdup("z"));
-	node2 = ft_lstnew(strdup("ozge"));
-	ft_lstadd_back(&head,node1);
-	ft_lstadd_back(&head,node2);
-	t_list *temp = head;
-	while(temp)
-	{
-		printf("%s ",(char *)temp->content);
+    char str1[] = "zozge";
+    char str2[] = "toptas";
+
+    char *content1 = ft_strdup(str1);
+    char *content2 = ft_strdup(str2);
+
+    first_node = ft_lstnew(content1);
+    second_node = ft_lstnew(content2);
+    head = first_node;
+
+    ft_lstadd_back(&head,second_node);
+
+    t_list *temp;
+    temp = head;
+    printf("nodelar:\n");
+    while (temp)
+    {
+        printf("%s\n",(char *)temp->content);
         temp = temp->next;
     }
-	ft_lstdelone(node2,del);
-	node1->next = NULL;
+    printf("\n");
+    printf("son dugum:\n");
+    printf("%s\n",(char *)ft_lstlast(head)->content);
+    printf("\n");
+    printf("kac dugum var:\n");
+    printf("%d\n",ft_lstsize(head));
+    printf("\n");
 
-	temp = head;
-	while(temp)
-	{
-		printf("%s ",(char *)temp->content);
+    head = head->next;
+    ft_lstdelone(first_node,&free);
+    temp = head;
+    printf("nodelar:\n");
+    while (temp)
+    {
+        printf("%s\n",(char *)temp->content);
         temp = temp->next;
     }
-	ft_lstclear(&head,del);
-	node2->next = NULL;
-	temp = head;
-	while(temp)
-	{
-		printf("%s ",(char *)temp->content);
+    printf("\n");
+
+    t_list *third_node;
+    t_list *fourth_node;
+    char str3[] = "yey";
+    char str4[] = "zxcv";
+    char *content3 = ft_strdup(str3);
+    char *content4 = ft_strdup(str4);
+    third_node = ft_lstnew(content3);
+    fourth_node = ft_lstnew(content4);
+    ft_lstadd_back(&head,third_node);
+    ft_lstadd_back(&head,fourth_node);
+    temp = head;
+    printf("nodelar:\n");
+    while(temp)
+    {
+        printf("%s\n",(char *)temp->content);
         temp = temp->next;
     }
-	return (0);
-}
-*/
+    printf("\n");
+    printf("kac dugum var:\n");
+    printf("%d\n",ft_lstsize(head));
+    printf("\n");
+    printf("son dugum:\n");
+    printf("%s\n",(char *)ft_lstlast(head)->content);
+    printf("\n");
 
-void del( void *content)
-{
-	free (content);
-}
-int main()
-{
-	t_list *head = NULL;
-	t_list *node1;
-	t_list *node2;
-	t_list *node3;
+    t_list *mapped = ft_lstmap(head,&uppercase,&free);
+    printf("uppercase:\n");
+    temp = mapped;
+    while(temp)
+    {
+        printf("%s\n",(char *)temp->content);
+        temp = temp->next;
+    }
+    printf("\n");
+    
+    ft_lstclear(&head,&free);
+    printf("kac dugum var:\n");
+    printf("%d\n",ft_lstsize(head));
+    printf("\n");
 
-	char str1[] = "z";
-	char str2[] = "ozge";
-	char str3[] = "toptas";
-
-	node1 = ft_lstnew(str1);
-	node2 = ft_lstnew(str2);
-	ft_lstadd_front(&head,node2);
-	ft_lstadd_front(&head,node1);
-
-	t_list *temp = head;
-
-	while(temp)
-	{
-		printf("%s  ",(char *)temp->content);
-		temp = temp->next;
-	}
-	printf("\nson dugum: %s", (char *)ft_lstlast(head)->content);
-	printf("\nkac dugum var? : %d\n", ft_lstsize(head));
-
-	node3 = ft_lstnew(str3);
-	ft_lstadd_back(&head,node3);
-
-	temp = head;
-
-	while(temp)
-	{
-		printf("%s  ",(char *)temp->content);
-		temp = temp->next;
-	}
-	printf("\nson dugum: %s", (char *)ft_lstlast(head)->content);
-	printf("\nkac dugum var? : %d", ft_lstsize(head));
-
-	ft_lstdelone(node2, del);
-
-	temp = head;
-
-	while(temp)
-	{
-		printf("%s  ",(char *)temp->content);
-		temp = temp->next;
-	}
-
-	return (0);
+    return (0);
 }

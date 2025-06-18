@@ -23,7 +23,6 @@ void	*ft_calloc(size_t nmemb, size_t size)
 		ft_bzero(ptr, 1);
 		return (ptr);
 	}
-
 	if (nmemb != 0 && size > ((size_t) -1) / nmemb)
 		return (NULL);
 	ptr = malloc (nmemb * size);
@@ -32,21 +31,3 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	ft_bzero(ptr, nmemb * size);
 	return (ptr);
 }
-
-/*
-
-
-#include <stdio.h>
-
-int main()
-{
-	int *ptr = ft_calloc(3, sizeof(int));
-	int i = 0;
-	while(i < 3)
-	{
-		printf("%d",ptr[i]);
-		i++;
-	}
-	free(ptr);
-	return (0);
-}*/

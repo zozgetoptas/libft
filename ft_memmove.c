@@ -20,14 +20,12 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 
 	d = (unsigned char *)dst;
 	s = (const unsigned char *)src;
+	if (!dst || !src)
+		return (NULL);
 	if (d > s)
 	{
-		i = len;
-		while (i > 0)
-		{
-			i--;
-			d[i] = s[i];
-		}
+		while (len-- > 0)
+			d[len] = s[len];
 	}
 	else
 	{
@@ -40,16 +38,3 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	}
 	return (dst);
 }
-
-/*
-#include <string.h>
-#include <stdio.h>
-int main()
-{
-    char dest[] ="zozgetoptas";
-    char *resultft = ft_memmove(dest+2,dest ,5);
-    char *resultorig = memmove(dest+2,dest,5);
-    printf("%s\n",resultft);
-    printf("%s",resultorig);
-    return (0);
-}*/
