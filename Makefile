@@ -48,7 +48,7 @@ INC		= libft.h
 
 OBJ	= $(SRC:.c=.o)
 BONUS_OBJ = $(BONUS_SRC:.c=.o)
-CC		= gcc
+CC		= cc
 RM		= rm -rf
 CFLAGS	= -Wall -Wextra -Werror
 
