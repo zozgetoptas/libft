@@ -20,7 +20,6 @@
   - [Linked List Functions (Bonus)](#linked-list-functions-bonus)
 - [Compilation](#compilation)
 - [Testing](#testing)
-- [Author](#author)
 
 ---
 
@@ -390,16 +389,6 @@ make
 gcc -o test test.c libft.a
 ./test
 ```
-
----
-
-## Author
-
-**ztoptas** - 42 Kocaeli Student
-
-- Email: ztoptas@student.42kocaeli.com
-- Created: 2025/05/26
-- Updated: 2025/06/02
 
 ---
 
